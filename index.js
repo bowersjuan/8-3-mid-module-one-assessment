@@ -84,10 +84,6 @@ console.log("getAllKinds(animals) should yield >> [\"Pig\", \"Cow\", \"Chicken\"
 function filterByCountMinimum(animals, minimum) {
   let filteredByCountAnimals = [];
 
-  if (animals.length === 0) {
-    return filteredByCountAnimals;
-  }
-
   for (let animal of animals) {
     if (animal.count >= minimum) {
       filteredByCountAnimals.push(animal);
