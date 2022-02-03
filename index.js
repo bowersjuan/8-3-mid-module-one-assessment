@@ -81,7 +81,26 @@ console.log("getAllKinds(animals) should yield >> [\"Pig\", \"Cow\", \"Chicken\"
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+  let filteredByCountAnimals = [];
+
+  if (animals.length === 0) {
+    return filteredByCountAnimals;
+  }
+
+  for (let animal of animals) {
+    if (animal.count >= minimum) {
+      filteredByCountAnimals.push(animal);
+    }
+  }
+
+  return filteredByCountAnimals;
+}
+
+// Test Case
+console.log("filterByCountMinimum(animals, 3) should yield >> [{ kind: \"Pig\", count: 5 }, { kind: \"Cow\", count: 7 }, { kind: \"Chicken\", count: 11 }] ?", filterByCountMinimum(animals, 3));
+console.log("filterByCountMinimum(animals, 7) should yield >> [{ kind: \"Cow\", count: 7 }, { kind: \"Chicken\", count: 11 }] ?", filterByCountMinimum(animals, 7));
+console.log("filterByCountMinimum([], 7) should yield >> [] ?", filterByCountMinimum([], 3));
 
 /**
  * FUNCTION DESCRIPTION
