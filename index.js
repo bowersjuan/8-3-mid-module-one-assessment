@@ -52,7 +52,17 @@ console.log("getTotalCount(animals) should yield >> 28 ?", getTotalCount(animals
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
 function getAllKinds(animals) {
+  let kindsOfAnimals = [];
+
+ for (let animal of animals) {
+  kindsOfAnimals.push(animal.kind);
+ }
+
+  return kindsOfAnimals;
 }
+
+//Test Case
+console.log("getAllKinds(animals) should yield >> [\"Pig\", \"Cow\", \"Chicken\", \"Horse\", \"Dog\", \"Cat\"] ?", getAllKinds(animals));
 
 /**
  * FUNCTION DESCRIPTION
