@@ -110,7 +110,26 @@ console.log("filterByCountMinimum([], 7) should yield >> [] ?", filterByCountMin
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+function getMostCommonAnimal(animals) {
+  let mostCommonAnimal = null
+
+  if (animals.length === 0) {
+    return mostCommonAnimal;
+  }
+
+  mostCommonAnimal = animals[0];
+  for (let i = 1; i < animals.length; ++i) {
+    if (mostCommonAnimal.count < animals[i].count) {
+      mostCommonAnimal = animals[i];
+    }
+  }
+  return mostCommonAnimal;
+}
+
+// Test Case
+console.log("getMostCommonAnimal(animals) should yield >> { kind: \"Chicken\", count: 11 } ?", getMostCommonAnimal(animals));
+console.log("getMostCommonAnimal([]) should yield >> null ?", getMostCommonAnimal([]));
+console.log(animals[0].count);
 
 // Do not change anything below this line.
 module.exports = {
